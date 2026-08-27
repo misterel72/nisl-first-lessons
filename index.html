@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b5a36" />
+  <meta name="description" content="NISL First Lessons: flexible, age-differentiated icebreakers, subject challenges and Flourish classroom culture activities." />
+  <title>NISL First Lessons</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson builder</a>
+
+  <header class="site-header">
+    <div class="rainbow-strip" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="NISL First Lessons home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-tree">✦</span>
+        </span>
+        <span class="brand-copy">
+          <strong>NISL FIRST LESSONS</strong>
+          <small data-i18n="brandTag">Start well. Learn together. Flourish.</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <span class="beta-pill" data-i18n="beta">NISL Staff Resource · Beta</span>
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">
+          <span class="language-en">العربية</span>
+          <span class="language-ar" hidden>English</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="builder">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Flexible first lessons for whatever walks through the door</p>
+        <h1 data-i18n="heroTitle">What do you need today?</h1>
+        <p class="hero-intro" data-i18n="heroIntro">Choose a class, a focus and the time you have. We will build a ready-to-teach lesson using simple equipment and age-appropriate activities.</p>
+      </div>
+
+      <div class="pathway-grid" role="group" aria-label="Lesson pathway">
+        <button class="pathway-card active" type="button" data-pathway="know">
+          <span class="pathway-icon" aria-hidden="true">👋</span>
+          <strong data-i18n="pathKnowTitle">Get to know them</strong>
+          <span data-i18n="pathKnowText">Names, personalities, confidence and connection.</span>
+        </button>
+        <button class="pathway-card" type="button" data-pathway="learn">
+          <span class="pathway-icon" aria-hidden="true">🧠</span>
+          <strong data-i18n="pathLearnTitle">Learn something together</strong>
+          <span data-i18n="pathLearnText">A zero-prior-knowledge subject or thinking challenge.</span>
+        </button>
+        <button class="pathway-card" type="button" data-pathway="culture">
+          <span class="pathway-icon" aria-hidden="true">🌱</span>
+          <strong data-i18n="pathCultureTitle">Build our classroom</strong>
+          <span data-i18n="pathCultureText">Relationships, expectations, student voice and Flourish.</span>
+        </button>
+      </div>
+
+      <form class="builder-card" id="lessonForm">
+        <input type="hidden" id="pathway" value="know" />
+        <div class="form-grid">
+          <label class="field">
+            <span data-i18n="ageLabel">Who have you got?</span>
+            <select id="age" required>
+              <option value="eyfs">KG / EYFS</option>
+              <option value="y1-2">Y1–2</option>
+              <option value="y3-4">Y3–4</option>
+              <option value="y5-6">Y5–6</option>
+              <option value="y7-9" selected>Y7–9</option>
+              <option value="y10-12">Y10–12</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span data-i18n="timeLabel">How long have you got?</span>
+            <select id="duration" required>
+              <option value="20">20 <span data-i18n="minutes">minutes</span></option>
+              <option value="40" selected>40 <span data-i18n="minutes">minutes</span></option>
+              <option value="60">60 <span data-i18n="minutes">minutes</span></option>
+              <option value="80">80 <span data-i18n="minutes">minutes</span></option>
+            </select>
+          </label>
+
+          <label class="field" id="focusField">
+            <span data-i18n="focusLabel">What do you want to learn about the class?</span>
+            <select id="focus">
+              <option value="names" data-i18n-option="focusNames">Names</option>
+              <option value="personalities" data-i18n-option="focusPersonalities">Personalities</option>
+              <option value="confidence" data-i18n-option="focusConfidence">Confidence</option>
+              <option value="teamwork" data-i18n-option="focusTeamwork" selected>Teamwork</option>
+              <option value="communication" data-i18n-option="focusCommunication">Communication</option>
+              <option value="subject-confidence" data-i18n-option="focusSubjectConfidence">Subject confidence</option>
+              <option value="creativity" data-i18n-option="focusCreativity">Creativity</option>
+              <option value="expectations" data-i18n-option="focusExpectations">Classroom expectations</option>
+            </select>
+          </label>
+
+          <label class="field hidden" id="subjectField">
+            <span data-i18n="subjectLabel">Choose a subject</span>
+            <select id="subject">
+              <option value="surprise" data-i18n-option="subjectSurprise">Surprise me</option>
+              <option value="english">English</option>
+              <option value="maths">Maths</option>
+              <option value="science">Science</option>
+              <option value="humanities">Humanities</option>
+              <option value="computing">Computing</option>
+              <option value="languages">Languages</option>
+              <option value="art">Art & Design</option>
+              <option value="pe">PE</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="builder-options">
+          <label class="check-option">
+            <input type="checkbox" id="flourishToggle" checked />
+            <span>
+              <strong data-i18n="flourishLabel">Include a Flourish moment</strong>
+              <small data-i18n="flourishHelp">A light-touch connection to Ready, Respectful, Responsible or Safe.</small>
+            </span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" id="lowPrepToggle" checked />
+            <span>
+              <strong data-i18n="lowPrepLabel">Board, paper and pens only</strong>
+              <small data-i18n="lowPrepHelp">Keep it usable without specialist equipment.</small>
+            </span>
+          </label>
+        </div>
+
+        <button class="primary-button generate-button" type="submit">
+          <span aria-hidden="true">✨</span>
+          <span data-i18n="createLesson">Create my lesson</span>
+        </button>
+      </form>
+
+      <div class="quick-note">
+        <span aria-hidden="true">💡</span>
+        <p data-i18n="quickNote"><strong>Designed for timetable limbo.</strong> No class list, no prior knowledge and no specialist resources required.</p>
+      </div>
+    </section>
+
+    <section class="result-section hidden" id="resultSection" aria-live="polite">
+      <div class="result-toolbar no-print">
+        <button type="button" class="ghost-button" id="backToBuilder">← <span data-i18n="changeChoices">Change choices</span></button>
+        <div class="toolbar-actions">
+          <button type="button" class="ghost-button" id="newLesson">↻ <span data-i18n="anotherLesson">Another lesson</span></button>
+          <button type="button" class="ghost-button" id="lessonTwo">＋ <span data-i18n="lessonTwo">Give me Lesson 2</span></button>
+          <button type="button" class="ghost-button" id="studentView">▣ <span data-i18n="studentView">Student view</span></button>
+          <button type="button" class="ghost-button" id="printLesson">⎙ <span data-i18n="print">Print</span></button>
+        </div>
+      </div>
+
+      <article class="lesson-sheet" id="lessonSheet">
+        <header class="lesson-header">
+          <div>
+            <p class="lesson-kicker" id="lessonKicker"></p>
+            <h2 id="lessonTitle"></h2>
+            <p class="lesson-summary" id="lessonSummary"></p>
+          </div>
+          <div class="lesson-badge" aria-hidden="true">🌱</div>
+        </header>
+
+        <div class="lesson-meta" id="lessonMeta"></div>
+
+        <section class="teacher-overview">
+          <div>
+            <span class="mini-label" data-i18n="learnAbout">You will learn about</span>
+            <p id="lessonLearning"></p>
+          </div>
+          <div>
+            <span class="mini-label" data-i18n="youNeed">You need</span>
+            <p id="lessonEquipment"></p>
+          </div>
+        </section>
+
+        <div class="lesson-stages" id="lessonStages"></div>
+
+        <section class="adaptation-panel no-student-view" id="adaptationPanel">
+          <div>
+            <span class="mini-label" data-i18n="teacherLens">Teacher lens</span>
+            <h3 data-i18n="whatToNotice">What to notice</h3>
+            <p id="teacherLens"></p>
+          </div>
+          <div>
+            <span class="mini-label" data-i18n="ageAdaptation">Age adaptation</span>
+            <h3 id="ageAdaptationTitle"></h3>
+            <p id="ageAdaptation"></p>
+          </div>
+        </section>
+
+        <section class="adjust-panel no-print no-student-view">
+          <p data-i18n="adjustPrompt">Need to tweak it on the fly?</p>
+          <div>
+            <button type="button" class="small-button" id="simplifyLesson" data-i18n="makeEasier">Make it easier</button>
+            <button type="button" class="small-button" id="stretchLesson" data-i18n="makeHarder">Make it harder</button>
+          </div>
+          <p class="adjust-note hidden" id="adjustNote"></p>
+        </section>
+      </article>
+
+      <button type="button" class="exit-student-view hidden no-print" id="exitStudentView">← <span data-i18n="teacherView">Back to teacher view</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer no-print">
+    <div class="footer-values" aria-label="Flourish values">
+      <span class="ready">READY</span>
+      <span class="respectful">RESPECTFUL</span>
+      <span class="responsible">RESPONSIBLE</span>
+      <span class="safe">SAFE</span>
+    </div>
+    <p>NISL First Lessons · <span data-i18n="footerText">Built for flexible starts, cover, transition and tutor time.</span></p>
+  </footer>
+
+  <script src="activities.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* Final school-brand copy and footer treatment. */
+.site-footer .footer-values { display: none; }
+.site-footer p { font-size: 0; }
+.site-footer p::before {
+  content: "An international community of learners striving for excellence and celebrating success";
+  display: block;
+  font-size: .9rem;
+  font-style: italic;
+  color: rgba(255,255,255,.82);
+}
+html[lang="ar"] .site-footer p::before {
+  content: "مجتمع دولي من المتعلمين يسعى للتميّز ويحتفل بالنجاح";
+}
+
+/* The Make Your Own guide does not have a footer element, so give it the same school signature. */
+body:has(.guide-wrap)::after {
+  content: "An international community of learners striving for excellence and celebrating success";
+  display: flex;
+  align-items: flex-end;
+  min-height: 150px;
+  padding: 0 min(4vw,44px) 28px;
+  color: rgba(255,255,255,.82);
+  font-size: .9rem;
+  font-style: italic;
+  background:
+    linear-gradient(90deg, rgba(7,74,41,.98) 0%, rgba(7,74,41,.90) 42%, rgba(7,74,41,.18) 72%, rgba(7,74,41,0) 100%),
+    #074A29 url("assets/nisl-skyline.webp") right bottom / auto 100% no-repeat;
+  border-top: 3px solid #C0A05D;
+}
+html[lang="ar"] body:has(.guide-wrap)::after {
+  content: "مجتمع دولي من المتعلمين يسعى للتميّز ويحتفل بالنجاح";
+  justify-content: flex-end;
+}
+
+@media (max-width:720px) {
+  body:has(.guide-wrap)::after {
+    min-height: 165px;
+    background:
+      rgba(7,74,41,.78),
+      #074A29 url("assets/nisl-skyline.webp") right bottom / auto 78% no-repeat;
+  }
+}

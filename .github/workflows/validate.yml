@@ -1,0 +1,36 @@
+name: Validate static site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check activities.js
+          node --check activities-extra.js
+          node --check app.js
+
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f activities.js
+          test -f activities-extra.js
+          test -f app.js
+          test -f netlify.toml
+
+      - name: Check HTML references
+        run: |
+          grep -q 'styles.css' index.html
+          grep -q 'activities.js' index.html
+          grep -q 'activities-extra.js' index.html
+          grep -q 'app.js' index.html

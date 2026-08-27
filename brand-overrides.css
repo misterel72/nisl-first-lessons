@@ -1,0 +1,380 @@
+/* Official NIS Lagoon visual system, derived from the approved staff presentation template. */
+:root {
+  --ink: #15352A;
+  --muted: #5C6D66;
+  --paper: #FFFFFF;
+  --wash: #EEF5F1;
+  --green: #074A29;
+  --green-2: #087542;
+  --navy: #15352A;
+  --blue: #087542;
+  --amber: #C0A05D;
+  --orange: #C0A05D;
+  --red: #8A4F3D;
+  --purple: #5C6D66;
+  --safe: #5C6D66;
+  --line: #DCE5E0;
+  --shadow: 0 18px 44px rgba(7, 74, 41, .08);
+  --radius: 18px;
+}
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  background: #FFFFFF;
+  color: var(--ink);
+}
+
+body[dir="rtl"] {
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.site-header {
+  background: rgba(255,255,255,.98);
+  border-bottom: 1px solid #E7ECE9;
+  backdrop-filter: none;
+}
+
+.rainbow-strip {
+  height: 4px;
+  background: var(--amber);
+}
+
+.header-inner {
+  min-height: 92px;
+}
+
+.brand {
+  gap: 1rem;
+}
+
+.brand-mark {
+  width: 64px;
+  height: 76px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: url("assets/nisl-crest.webp") center / contain no-repeat;
+}
+
+.brand-tree { display: none; }
+
+.brand-copy strong {
+  color: var(--green);
+  letter-spacing: .025em;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.beta-pill {
+  background: var(--wash);
+  border-color: #DCE5E0;
+  color: var(--green);
+  border-radius: 8px;
+}
+
+.language-toggle,
+.ghost-button,
+.small-button {
+  color: var(--green);
+  border-color: #C8D7CF;
+  border-radius: 8px;
+}
+
+.language-toggle:hover,
+.ghost-button:hover,
+.small-button:hover {
+  background: var(--wash);
+  border-color: #85B9A3;
+}
+
+.hero {
+  padding-top: 4rem;
+}
+
+.hero-copy {
+  position: relative;
+  text-align: left;
+  margin-left: 0;
+  max-width: 880px;
+  padding-left: 30px;
+}
+
+body[dir="rtl"] .hero-copy {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .35rem;
+  bottom: .2rem;
+  width: 4px;
+  background: var(--amber);
+}
+
+body[dir="rtl"] .hero-copy::before {
+  left: auto;
+  right: 0;
+}
+
+.eyebrow,
+.mini-label,
+.lesson-kicker {
+  color: var(--green-2);
+}
+
+.hero h1,
+.lesson-header h2 {
+  color: var(--green);
+  letter-spacing: -.03em;
+  font-weight: 500;
+}
+
+.hero-intro,
+.lesson-summary,
+.pathway-card span:last-child,
+.adaptation-panel p,
+.quick-note,
+.route-card p,
+.make-first-intro p {
+  color: var(--muted);
+}
+
+.pathway-card,
+.builder-card,
+.lesson-sheet,
+.route-card,
+.creation-card,
+.guide-card,
+.guide-hero {
+  border-color: #DCE5E0 !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.pathway-card,
+.builder-card,
+.lesson-sheet {
+  border-radius: 16px;
+}
+
+.pathway-card.active {
+  border-color: #85B9A3 !important;
+  box-shadow: 0 0 0 3px rgba(133,185,163,.16), var(--shadow) !important;
+}
+
+.pathway-card strong,
+.check-option strong,
+.adaptation-panel h3,
+.fallback h2,
+.make-first-intro h1,
+.guide-hero h1 {
+  color: var(--green) !important;
+}
+
+.builder-card,
+.teacher-overview > div,
+.check-option {
+  background: #FFFFFF;
+}
+
+.check-option,
+.teacher-overview > div,
+.stage-card,
+.adaptation-panel,
+.adjust-panel,
+.field select {
+  border-color: #DCE5E0;
+}
+
+.check-option,
+.teacher-overview > div,
+.field select {
+  background: #F7FAF8;
+}
+
+.primary-button {
+  background: var(--green);
+  box-shadow: 0 8px 20px rgba(7,74,41,.18);
+  border-radius: 8px;
+}
+
+.lesson-sheet::before {
+  height: 4px;
+  background: var(--amber);
+}
+
+.lesson-header {
+  background: #FFFFFF;
+}
+
+.lesson-badge {
+  background: var(--wash);
+}
+
+.meta-pill {
+  background: var(--wash);
+  color: var(--green);
+  border-radius: 7px;
+}
+
+.stage-time,
+.stage-card.exit .stage-time {
+  background: var(--green);
+}
+
+.stage-card.flourish .stage-time {
+  background: var(--green-2);
+}
+
+.stage-copy h3 {
+  color: var(--green);
+}
+
+.stage-copy p {
+  color: #31483F;
+}
+
+.stage-card.flourish,
+.adaptation-panel > div:first-child {
+  background: var(--wash);
+}
+
+.stage-card.exit,
+.adaptation-panel > div:last-child {
+  background: #F7FAF8;
+}
+
+/* Creation pages: keep platform identification, but within the school palette. */
+.creation-card.gemini,
+.route-card.gemini {
+  border-top: 5px solid #087542 !important;
+}
+
+.creation-card.canva,
+.route-card.canva {
+  border-top: 5px solid #C0A05D !important;
+}
+
+.creation-card.canva a {
+  background: var(--green) !important;
+}
+
+.guide-hero::before {
+  height: 5px !important;
+  background: var(--amber) !important;
+}
+
+.guide-badge {
+  background: var(--wash) !important;
+  color: var(--green) !important;
+}
+
+.prompt-box,
+.video-card {
+  background: var(--green) !important;
+}
+
+.copy-btn,
+.primary-link,
+.fallback a,
+.creation-card a {
+  background: var(--green) !important;
+  border-radius: 8px !important;
+}
+
+.secondary-link {
+  color: var(--green) !important;
+  border-color: #C8D7CF !important;
+  border-radius: 8px !important;
+}
+
+.fallback,
+.fallback-strip {
+  background: var(--wash) !important;
+  border-color: #DCE5E0 !important;
+  color: var(--ink) !important;
+}
+
+.fallback-strip strong,
+.fallback-strip p {
+  color: var(--ink) !important;
+}
+
+.fallback-strip a {
+  color: #FFFFFF !important;
+  background: var(--green) !important;
+}
+
+/* Official NIS Lagoon skyline footer treatment. */
+.site-footer {
+  position: relative;
+  min-height: 150px;
+  margin-top: 2.5rem;
+  padding: 42px min(4vw, 44px) 28px;
+  overflow: hidden;
+  text-align: left;
+  color: rgba(255,255,255,.84);
+  background: var(--green) url("assets/nisl-skyline.webp") right bottom / auto 100% no-repeat;
+  border-top: 3px solid var(--amber);
+}
+
+.site-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(7,74,41,.98) 0%, rgba(7,74,41,.92) 42%, rgba(7,74,41,.25) 72%, rgba(7,74,41,0) 100%);
+}
+
+.site-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer p {
+  max-width: 600px;
+  margin: 0;
+  color: rgba(255,255,255,.82);
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.footer-values {
+  justify-content: flex-start;
+  margin-bottom: .65rem;
+  gap: .85rem;
+}
+
+.footer-values span {
+  color: #FFFFFF !important;
+  opacity: .86;
+}
+
+@media (max-width: 720px) {
+  .header-inner { min-height: 78px; }
+  .brand-mark { width: 48px; height: 60px; }
+  .hero-copy { padding-left: 22px; }
+  body[dir="rtl"] .hero-copy { padding-right: 22px; }
+  .site-footer {
+    min-height: 165px;
+    background-size: auto 78%;
+    background-position: right bottom;
+    padding-top: 30px;
+  }
+  .site-footer::after {
+    background: rgba(7,74,41,.78);
+  }
+}
+
+@media print {
+  body { font-family: "Open Sans", Arial, sans-serif; }
+  .lesson-sheet::before { background: var(--amber); }
+}
